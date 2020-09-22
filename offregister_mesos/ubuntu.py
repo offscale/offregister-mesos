@@ -84,7 +84,9 @@ def _build_and_upload_deb(version):
     from offregister_fab_utils.apt import is_installed, Package
 
     print("----------------------------------------------------------------------")
-    print("is_installed(Package('ruby', '2.3')) =", is_installed(Package("ruby", "2.3")))
+    print(
+        "is_installed(Package('ruby', '2.3')) =", is_installed(Package("ruby", "2.3"))
+    )
     apt_depends("software-properties-common")
     sudo("apt-add-repository -y ppa:brightbox/ruby-ng")
     apt_depends(
