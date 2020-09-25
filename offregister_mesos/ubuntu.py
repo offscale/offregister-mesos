@@ -81,7 +81,8 @@ def _build_and_upload_deb(version):
 
     install_ruby()
 
-    from offregister_fab_utils.apt import is_installed, Package
+    from offregister_fab_utils.apt import is_installed
+    from offregister_fab_utils import Package
 
     print("----------------------------------------------------------------------")
     print(
