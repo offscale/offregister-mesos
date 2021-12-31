@@ -1,9 +1,9 @@
 from __future__ import print_function
+
 from os import path
 
-from fabric.api import run, sudo, local, shell_env
+from fabric.api import local, run, shell_env, sudo
 from fabric.contrib.files import exists, upload_template
-
 from offregister_fab_utils.apt import apt_depends, cd
 from offregister_fab_utils.git import clone_or_update
 from offregister_fab_utils.ruby import install as install_ruby
@@ -81,8 +81,8 @@ def _build_and_upload_deb(version):
 
     install_ruby()
 
-    from offregister_fab_utils.apt import is_installed
     from offregister_fab_utils import Package
+    from offregister_fab_utils.apt import is_installed
 
     print("----------------------------------------------------------------------")
     print(
