@@ -48,7 +48,7 @@ if __name__ == "__main__":
         test_suite=package_name + ".tests",
         packages=find_packages(),
         package_dir={package_name: package_name},
-        install_requires=["fab-classic"],
+        install_requires=["fabric2"],
         data_files=[
             (data_install_dir(), list(map(data_join, listdir(data_join())))),
         ],
