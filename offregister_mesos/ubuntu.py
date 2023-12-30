@@ -8,11 +8,11 @@ from offregister_fab_utils.git import clone_or_update
 from offregister_fab_utils.ruby import install as install_ruby
 
 
-def _step0(*args, **kwargs):
+def _step0(c, *args, **kwargs):
     _build_and_upload_deb(version="0.28.1")
 
 
-def step0(*args, **kwargs):
+def step0(c, *args, **kwargs):
     master = kwargs.pop("master", False)
     version = "0.28.1"
     if c.run(
@@ -128,7 +128,7 @@ def _build_and_upload_deb(version):
         c.run("git push -u origin master")
 
 
-def step1(*args, **kwargs):
+def step1(c, *args, **kwargs):
     c.run("service status mesos-master")
     c.run("service status mesos-slave")
     raise NotImplementedError()
